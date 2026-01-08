@@ -4,6 +4,10 @@ import sys
 import requests
 
 
+LOCATION = "Paris"
+BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
+
+
 def get_weather() -> None:
     secret_key = os.getenv("API_KEY")
     if not secret_key:
@@ -13,8 +17,6 @@ def get_weather() -> None:
         )
         sys.exit(1)
 
-    LOCATION = "Paris"
-    BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
     params = {
         "key": secret_key,
         "q": LOCATION,
